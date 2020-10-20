@@ -11,13 +11,11 @@ import org.springframework.context.annotation.Configuration;
 public class OpenApiTestConfig {
 
 	@Bean
-	public OpenAPI customOpenAPI(@Value("${application-description}") String applicationDesciption, @Value("${application-version}") String appVersion) {
+	public OpenAPI customOpenAPI(@Value("${application-description}") String applicationDescription, @Value("${application-version}") String applicationVersion) {
 		return new OpenAPI()
 				.info(new Info()
 						.title("sample application API")
-						.version(appVersion)
-						.description(applicationDesciption)
-						.termsOfService("http://swagger.io/terms/")
-						.license(new License().name("Apache 2.0").url("http://springdoc.org")));
+						.version(applicationVersion)
+						.description(applicationDescription));
 	}
 }
